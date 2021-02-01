@@ -6,7 +6,7 @@ Join blender objects that contain modifiers and shape keys into a single object
 * Tick the check box next to "Object: Join Modifiers and Shapes" to enable it in the program. You're done!
 
 ## To use
-Select stuff, then run the tool from Object Mode -> Tool Panel -> Join Modifiers & SHapes -> Crunchitize. The function will run, applying all modifiers and keeping & combining identically named shape keys in the final single mesh.
+Select stuff, then run the tool from Object Mode -> Tool Panel -> Join Modifiers & Shapes -> Crunchitize. The function will run, applying all modifiers and keeping & combining identically named shape keys in the final single mesh.
 
 ## NOTES
 * This script will fail if a shape key affects a modifier in such a way that creates more or less vertices in the resulting shape.
