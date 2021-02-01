@@ -49,8 +49,6 @@ class join_modifiers_shape_keys(bpy.types.Operator):
         for o in ol:                                                # hide original objects
             o.hide_set(True)
         
-        
-        
         # Build todo list of shape keys (merge matched name shape key directives)
         for o in dl:
             print(o.name)
