@@ -211,18 +211,6 @@ class join_modifiers_shape_keys(bpy.types.Operator):
         for b in bpy.data.meshes:                                   # clean up
             if b.users == 0:
                 bpy.data.meshes.remove(b)
-        #if armature_apply == True and armature_link is not None:
-        #    bpy.ops.object.modifier_add(type='ARMATURE')
-        #    ob.modifiers[0].object = armature_link
-                
-            
-                
-                
-                
-                
-        
-        
-        
         return {'FINISHED'}
 
 class OBJECT_PT_join_modifiers_shape_keys_panel(bpy.types.Panel):
