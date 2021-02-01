@@ -161,7 +161,7 @@ class join_modifiers_shape_keys(bpy.types.Operator):
                 
                 # apply all modifiers
                 for m in o.modifiers:
-                    bpy.ops.object.modifier_apply(apply_as='DATA', modifier=m.name)
+                    bpy.ops.object.modifier_apply(modifier=m.name)
                 
                 tl.append(bpy.context.object)               # append to temp object list
                 
@@ -184,9 +184,11 @@ class join_modifiers_shape_keys(bpy.types.Operator):
         
         # Join generated shape meshes as shapekeys
         fo = sl[0]                                                  # final output object
+        print("Starting Verts: "+str(len(fo.data.vertices[:])))
         bpy.context.view_layer.objects.active = fo
         for so in sl[1:]:
             print(so.name)
+            print(" Verts: "+str(len(so.data.vertices[:])))
             bpy.ops.object.select_all(action="DESELECT")
             bpy.context.view_layer.objects.active = fo
             fo.select_set(True)
@@ -206,6 +208,9 @@ class join_modifiers_shape_keys(bpy.types.Operator):
         
         bpy.ops.object.delete({"selected_objects": sl[1:]})         # clean up
         bpy.ops.object.delete({"selected_objects": dl})             # clean up
+        for b in bpy.data.meshes:                                   # clean up
+            if b.users == 0:
+                bpy.data.meshes.remove(b)
         #if armature_apply == True and armature_link is not None:
         #    bpy.ops.object.modifier_add(type='ARMATURE')
         #    ob.modifiers[0].object = armature_link
