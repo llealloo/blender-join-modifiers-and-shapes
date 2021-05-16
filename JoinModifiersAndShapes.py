@@ -1,7 +1,7 @@
 bl_info = {
     "name": "Join Modifiers and Shapes",
     "author": "llealloo",
-    "version": (1, 01),
+    "version": (1, 0, 1),
     "blender": (2, 83, 0),
     "location": "View3D > Object Mode > Tool",
     "description": "Join and apply modifiers to selected objects including their shape keys",
